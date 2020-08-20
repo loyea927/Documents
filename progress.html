@@ -1,0 +1,100 @@
+<!doctype>
+<html>
+<head>
+ 
+<style>
+.wrapper {
+	width: 300px;
+	height: 30px;
+	background-color: #aaaaaa;
+	margin: 100px auto;
+	border-radius: 25px;
+}
+.load-bar {	
+	color:#ffffff;
+	width: 0%;	
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: green;
+	border-radius: 25px;
+	transition: width 4s;
+	-webkit-transition: width 4s;
+	-moz-transition: width 4s;
+	-o-transition: width 4s;
+}
+ 
+.load-bar-action {
+	width: 100%;	
+	background-color: green;
+}
+
+.animation{
+   width:100px;
+   height:100px;
+   background:red;
+   position:relative;
+   animation:mymove 5s infinite;
+}
+
+@keyframes mymove
+{
+   from {left:0px;}
+   to {left:200px;}
+}
+.transition{
+  width:100px;
+  height:100px;
+  background:blue;
+  transition:width 2s;
+}
+.transition:hover{
+  width:300px;
+}
+</style>
+ 
+<script type="text/javascript">
+
+function getData(){
+	// var loader = document.getElementById("loader");
+	// var inc = 0, showtime = 0;	
+	// var loader_time = setInterval(function(){
+	// 	inc++;
+	// 	loader.style.width = inc + "%";				
+	// 	(function(showInc) {
+	// 		setTimeout(function(){
+	// 			console.log (showInc);
+	// 			loader.innerHTML = showInc+"%";},
+	// 		showtime);
+	// 	})(inc);		
+	// 	showtime += 35;
+	// 	if (inc == 100) {			
+	// 		clearInterval(loader_time);
+	// 	}
+	// }, 10);
+
+	var loader = document.getElementById("loader");
+	var inc = 0;
+	loader.className += " load-bar-action";
+	var loader_time = setInterval(function(){
+		inc++;
+		//loader.style.width = inc + "%";	
+		loader.innerHTML = inc+"%";		
+		if (inc == 100) {			
+			clearInterval(loader_time);
+		}
+	}, 35);	
+}
+</script>
+</head>
+<body>
+	<button onclick="getData()">获取进度数据</button>
+	<div class="wrapper" id="wrapper">		
+		<div class="load-bar" id="loader">	
+			0%		
+		</div>		
+	</div>
+	<div class="animation"></div>
+	<div class="transition"></div>
+</body>
+</html>

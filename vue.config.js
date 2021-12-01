@@ -1,3 +1,11 @@
+//  package.json文件中scripts脚本
+
+// "dev:companyClock": "cross-env PROJECT_NAME=companyClock vue-cli-service serve",
+// "build:companyClock": "cross-env PROJECT_NAME=companyClock vue-cli-service build",
+// "test:companyClock": "cross-env PROJECT_NAME=companyClock vue-cli-service build --mode test",
+
+
+
 // const config = require("./config/projectsConfig.js");
 // let projectName = process.env.PROJECT_NAME;
 // module.exports = {
